@@ -477,8 +477,12 @@ export default function Home() {
               Have a project in mind?
             </h3>
             <p className="mt-3 text-sm leading-6 text-zinc-400">
-              I&apos;m open to full stack roles, freelance projects,
-              collaborations, and interesting product ideas.
+              Have an idea, an existing product to improve, or a workflow that
+              needs a better digital home? I&apos;ll help turn it into a polished,
+              useful experience.
+            </p>
+            <p className="mt-4 text-xs font-medium uppercase tracking-[.14em] text-emerald-200">
+              Usually replies within 1 business day
             </p>
             <div className="mt-7 space-y-4 text-sm text-zinc-300">
               <motion.a

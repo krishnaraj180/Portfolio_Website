@@ -130,6 +130,13 @@ export default function Projects() {
                   {p.description}
                 </p>
 
+                {p.outcome && (
+                  <p className="mt-3 rounded-lg border border-cyan-300/10 bg-cyan-300/5 px-3 py-2 text-sm leading-6 text-cyan-100/80">
+                    <span className="font-semibold text-cyan-200">Client value:</span>{" "}
+                    {p.outcome}
+                  </p>
+                )}
+
                 {/* Tech stack pills */}
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.stack.map((s, si) => (

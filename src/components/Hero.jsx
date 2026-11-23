@@ -143,8 +143,7 @@ export default function Hero() {
             variants={fadeUp}
             className="max-w-3xl text-5xl font-bold leading-[1.02] tracking-[-.045em] sm:text-6xl lg:text-7xl"
           >
-            Hi, I&apos;m
-            <span className="text-gradient"> {portfolio.name}</span>
+            I build digital products that move businesses forward.
           </motion.h1>
 
           <motion.div
@@ -161,9 +160,9 @@ export default function Hero() {
               />
             </p>
             <p className="mt-2">
-              I build responsive, full stack web experiences — from clean React
-              interfaces to robust Node.js APIs — with reusable components and
-              thoughtful details.
+              I help teams turn ideas into fast, polished web experiences —
+              from clean React interfaces to reliable full-stack applications.
+              Thoughtful UX, maintainable code, and a clear path from concept to launch.
             </p>
           </motion.div>
 
@@ -174,7 +173,7 @@ export default function Hero() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              View my work
+              See what I can build
               <ArrowUpRight
                 size={17}
                 className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -187,7 +186,7 @@ export default function Hero() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              Start a project
+              Let&apos;s discuss your idea
               <ArrowUpRight size={17} aria-hidden="true" />
             </motion.a>
             <motion.a
