@@ -108,6 +108,10 @@ export default function Projects() {
                     </span>
                   </div>
                 )}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+                />
                 <motion.span
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}

@@ -424,22 +424,26 @@ export default function Home() {
         title="A clear path from idea to interface"
       >
         <motion.div
-          className="grid gap-4 md:grid-cols-4"
+          className="relative grid gap-4 md:grid-cols-4"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
           variants={staggerParent}
         >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[12.5%] right-[12.5%] top-10 hidden h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent md:block"
+          />
           {portfolio.workflow.map(([number, title, text], i) => (
             <motion.article
               key={number}
               variants={fadeUp}
               custom={i}
-              className="relative border-l border-cyan-300/30 pl-5"
+              className="glass glow relative z-10 rounded-xl border border-white/10 p-5"
               whileHover={{ x: 4 }}
             >
               <motion.span
-                className="absolute -left-[5px] top-0 h-[10px] w-[10px] rounded-full bg-[var(--accent-color)]"
+                className="absolute left-5 top-4 h-[10px] w-[10px] rounded-full bg-[var(--accent-color)] shadow-[0_0_18px_var(--accent-color)]"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
@@ -450,7 +454,7 @@ export default function Home() {
                   damping: 15,
                 }}
               />
-              <span className="font-mono text-sm accent-text">{number}</span>
+              <span className="ml-5 font-mono text-sm accent-text">{number}</span>
               <h3 className="mt-3 font-semibold text-white">{title}</h3>
               <p className="mt-2 text-sm leading-6 text-zinc-400">{text}</p>
             </motion.article>

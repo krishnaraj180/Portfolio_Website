@@ -26,13 +26,13 @@ export default function Section({ id, eyebrow, title, children }) {
         viewport={{ once: true, amount: 0.1 }}
         variants={sectionVariants}
       >
-        <div className="mb-9 grid gap-3 sm:grid-cols-[.65fr_1.35fr] sm:items-end sm:gap-8">
+        <div className="mb-9 grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-[minmax(9rem,.65fr)_minmax(0,1.35fr)] sm:items-end sm:gap-8">
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xs font-semibold uppercase tracking-[.25em] accent-text"
+            className="text-xs font-semibold uppercase tracking-[.25em] accent-text sm:pb-1"
           >
             {eyebrow}
           </motion.p>
@@ -41,7 +41,7 @@ export default function Section({ id, eyebrow, title, children }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+            className="max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:w-full sm:justify-self-end sm:text-4xl lg:text-5xl"
           >
             {title}
           </motion.h2>
