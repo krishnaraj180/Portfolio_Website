@@ -69,14 +69,15 @@ export async function POST(request) {
     }
 
     /* ── Forward to FormSubmit ──────────────────────── */
-    const submission = new URLSearchParams();
+    const submission = {};
     for (const [key, value] of formData.entries()) {
       if (key === "_honey") continue;
-      submission.set(key, String(value));
+      submission[key] = String(value);
     }
-    submission.set("_subject", "New portfolio inquiry");
-    submission.set("_template", "table");
-    submission.set("_captcha", "false");
+    submission._subject = "New portfolio inquiry";
+    submission._template = "table";
+    submission._captcha = "false";
+    submission.replyto = email;
 
     const response = await fetch(
       `https://formsubmit.co/ajax/${portfolio.email}`,
@@ -84,16 +85,28 @@ export async function POST(request) {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: submission.toString(),
+        body: JSON.stringify(submission),
         cache: "no-store",
       },
     );
 
-    if (!response.ok) {
+    const serviceResult = await response.json().catch(() => ({}));
+    const serviceFailed =
+      !response.ok ||
+      serviceResult.success === false ||
+      serviceResult.success === "false";
+
+    if (serviceFailed) {
+      const serviceMessage = String(serviceResult.message || "");
+      const activationRequired = /activat|confirm/i.test(serviceMessage);
       return Response.json(
-        { message: "Email service rejected the submission." },
+        {
+          message: activationRequired
+            ? "The contact form needs one-time email activation. Please check the portfolio inbox for FormSubmit's activation email."
+            : `The email service could not accept this enquiry. Please email ${portfolio.email} directly instead.`,
+        },
         { status: 502 },
       );
     }
