@@ -101,11 +101,12 @@ export async function POST(request) {
     if (serviceFailed) {
       const serviceMessage = String(serviceResult.message || "");
       const activationRequired = /activat|confirm/i.test(serviceMessage);
+      console.error("FormSubmit rejected enquiry:", serviceResult);
       return Response.json(
         {
           message: activationRequired
             ? "The contact form needs one-time email activation. Please check the portfolio inbox for FormSubmit's activation email."
-            : `The email service could not accept this enquiry. Please email ${portfolio.email} directly instead.`,
+            : `Email delivery is not active for this form yet. Please activate FormSubmit for ${portfolio.email}, then try again.`,
         },
         { status: 502 },
       );
