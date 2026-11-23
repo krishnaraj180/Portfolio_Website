@@ -1,0 +1,102 @@
+export const projects = [
+{
+  screenshot:"/images/CollabBoard.png",
+  name: "CollabBoard",
+  featured: true,
+  description: "Collaborative workspace for organizing ideas, sharing updates and keeping project work aligned in one place.",
+  category: "Applications",
+  challenge: "Make collaboration feel clear and effortless while keeping shared project information organized.",
+  approach: "Designed a focused, responsive workspace with reusable interface patterns for shared boards and team communication.",
+  highlights: ["Shared workspace", "Project organization", "Responsive UI"],
+  stack: ["React", "JavaScript", "Tailwind CSS"],
+  live: "#",
+  github: "https://github.com/krishnaraj180/CollabBoard"
+},
+{ 
+    screenshot:"/images/EventHub.png",
+    name: "EventHub Booking Platform", 
+    description: "Responsive event discovery and booking platform with reusable components, centralized state management and a clean booking experience.",
+    category: "Applications",
+    challenge: "Make event discovery and booking straightforward across screen sizes.",
+    approach: "Built a responsive React interface with reusable components and Redux Toolkit state management.",
+    highlights: ["Event discovery", "Booking flow", "Reusable components"],
+    stack: ["React", "Redux Toolkit", "Tailwind CSS"], 
+    live: "#", 
+    github: "https://github.com/krishnaraj180/EventHub-Booking-platform-.git"
+},
+{   
+    screenshot:"/images/Foodie express.png",
+    name: "Foodie's Express", 
+    description: "Responsive food ordering UI with product browsing, cart functionality and state management for a smooth ordering experience.", 
+    category: "Applications",
+    challenge: "Present food items clearly and make it easy to manage a shopping cart.",
+    approach: "Created a responsive React interface with reusable product views and Redux-powered cart state.",
+    highlights: ["Product browsing", "Cart management", "Responsive UI"],
+    stack: ["React", "Redux", "Tailwind CSS"], 
+    live: "#", 
+    github: "https://github.com/krishnaraj180/Food-Delivery-App.git" 
+},
+{   
+    screenshot:"/images/Expense tracker.png",
+    name: "Expense Tracker", 
+    featured: true,
+    description: "Modern expense tracking application for recording and managing personal expenses with a responsive interface.", 
+    category: "Applications",
+    challenge: "Make it simple to record and review personal expenses.",
+    approach: "Built a responsive Next.js interface and used Redux Toolkit to manage application state.",
+    highlights: ["Expense records", "State management", "Responsive dashboard"],
+    stack: ["React", "Next.js", "Redux ToolKit", "Tailwind CSS"], 
+    live: "https://expense-tracker-seven-liart-55.vercel.app/", 
+    github: "https://github.com/krishnaraj180/Expense-Tracker.git" 
+},
+{   
+    screenshot:"/images/healthlog.png",
+    name: "HealthLog", 
+    featured: true,
+    description: "Responsive health-tracking application with structured data presentation and Redux-based state management.", 
+    category: "Applications",
+    challenge: "Present health-related activity in a clear, manageable format.",
+    approach: "Developed a responsive React application with Redux state management and structured data views.",
+    highlights: ["Health data tracking", "Redux state", "Responsive design"],
+    stack: ["React", "Redux", "Tailwind CSS"], 
+    live: "https://health-log-six-chi.vercel.app/", 
+    github: "https://github.com/krishnaraj180/Health-Log.git" 
+},  
+{
+  screenshot:"/images/google map.png",
+  name: "Google Maps Clone",
+  description: "Interactive map application that recreates core Google Maps features with location search, map navigation and responsive UI.",
+  category: "API Integrations",
+  challenge: "Bring location search and map navigation together in a responsive interface.",
+  approach: "Connected a React UI to REST APIs to support location search and interactive map experiences.",
+  highlights: ["Location search", "Map navigation", "API integration", "Responsive design"],
+  stack: ["React", "Tailwind CSS", "REST APIs"],
+  live: "https://google-map-kappa.vercel.app/",
+  github: "https://github.com/krishnaraj180/Google-map.git"
+},
+{
+  screenshot:"/images/Npm registry.png",
+  name: "NPM Registry Clone",
+  featured: true,
+  description: "Responsive NPM package registry interface for browsing and exploring packages with reusable components and API-driven data.",
+  category: "API Integrations",
+  challenge: "Make package discovery and exploration accessible through a focused registry interface.",
+  approach: "Built with React and TypeScript, connecting API-driven package data to reusable UI and Redux Toolkit state.",
+  highlights: ["Package search", "API integration", "Redux state", "Responsive design"],
+  stack: ["React", "TypeScript", "Redux Toolkit", "Tailwind CSS"],
+  live: "https://npm-registry-nu.vercel.app/",
+  github: "https://github.com/krishnaraj180/NPM-Registry.git"
+},
+{
+  screenshot:"/images/Reusable & Ui develop.png",
+  name: "Reusable Components & UI Development",
+  description: "Collection of reusable React components and responsive UI patterns designed to build consistent and maintainable web interfaces.",
+  category: "UI Components",
+  challenge: "Create a foundation of consistent, reusable patterns for web interfaces.",
+  approach: "Organized React components and responsive UI patterns with utility-first styling.",
+  highlights: ["Reusable components", "Responsive UI", "Component-based design", "Consistent styling"],
+  stack: ["React", "JavaScript", "Tailwind CSS"],
+  live: "#",
+  github: "https://github.com/krishnaraj180/Resuable-File.git"
+}
+];
