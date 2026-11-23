@@ -84,6 +84,16 @@ export default function ContactForm() {
       maxLength: 254,
       placeholder: "jane@example.com",
     },
+    {
+      label: "Phone number",
+      id: "contact-phone",
+      name: "phone",
+      type: "tel",
+      autoComplete: "tel",
+      required: false,
+      maxLength: 25,
+      placeholder: "+91 98765 43210",
+    },
   ];
 
   const inputClasses =

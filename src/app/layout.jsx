@@ -55,6 +55,7 @@ const jsonLd = {
   jobTitle: "Full Stack Developer",
   url: siteUrl,
   email: portfolio.email,
+  telephone: portfolio.phone,
   address: {
     "@type": "PostalAddress",
     addressRegion: "Tamil Nadu",
