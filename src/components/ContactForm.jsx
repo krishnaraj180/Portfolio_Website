@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, AlertCircle } from "lucide-react";
+import { portfolio } from "@/data/portfolio";
 
 const inputVariant = {
   hidden: { opacity: 0, y: 15 },
@@ -36,10 +37,14 @@ export default function ContactForm() {
       const response = await fetch(form.action, {
         method: "POST",
         body: new FormData(form),
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+        },
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.message || "Submission failed");
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error(result.message || "Submission failed");
+      }
 
       form.reset();
       setStatus("success");
@@ -87,7 +92,7 @@ export default function ContactForm() {
   return (
     <motion.form
       ref={formRef}
-      action="/api/contact"
+      action={`https://formsubmit.co/ajax/${portfolio.email}`}
       method="POST"
       onSubmit={handleSubmit}
       aria-busy={status === "sending"}
