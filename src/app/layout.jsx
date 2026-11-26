@@ -1,10 +1,12 @@
+
 import "./globals.css";
 import { portfolio } from "@/data/portfolio";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://krishnaraj-portfolio.vercel.app";
 
 export const metadata = {
-  metadataBase: new URL(siteUrl),
   title: "Krishnaraj R. | Full Stack Developer — React & MERN",
   description:
     "Portfolio of Krishnaraj R., a Full Stack Developer specializing in React, Next.js, Node.js and the MERN ecosystem. Building responsive, production-grade web applications.",
@@ -18,13 +20,13 @@ export const metadata = {
     "Web portfolio",
   ],
   authors: [{ name: "Krishnaraj R." }],
-  creator: "Krishnaraj R.",
   robots: { index: true, follow: true },
+  metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/",
+    url: siteUrl,
     title: "Krishnaraj R. | Full Stack Developer",
     description:
       "Selected projects, skills and experience from full stack developer Krishnaraj R., specializing in React, Next.js and the MERN ecosystem.",
@@ -34,7 +36,7 @@ export const metadata = {
         url: "/images/Npm registry.png",
         width: 1200,
         height: 675,
-        alt: "Krishnaraj R. portfolio preview",
+        alt: "Krishnaraj R. Portfolio",
       },
     ],
   },
@@ -45,7 +47,9 @@ export const metadata = {
       "Selected projects, skills and experience from full stack developer Krishnaraj R.",
     images: ["/images/Npm registry.png"],
   },
-  icons: { icon: "/images/krishnaraj-portrait.png" },
+  icons: {
+    icon: "/images/krishnaraj-portrait.png",
+  },
 };
 
 const jsonLd = {
@@ -80,6 +84,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      className="font-sans"
       style={{
         "--color-background": portfolio.theme.background,
         "--color-surface": portfolio.theme.surface,
@@ -92,6 +97,12 @@ export default function RootLayout({ children }) {
       }}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

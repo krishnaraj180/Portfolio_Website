@@ -37,9 +37,7 @@ export default function ContactForm() {
       const response = await fetch(form.action, {
         method: "POST",
         body: new FormData(form),
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.success === false || result.success === "false") {
@@ -111,7 +109,7 @@ export default function ContactForm() {
       whileInView="show"
       viewport={{ once: true, amount: 0.15 }}
     >
-      {/* Honeypot spam trap — hidden from real users */}
+      {/* Honeypot spam trap */}
       <input
         type="text"
         name="_honey"
@@ -136,7 +134,7 @@ export default function ContactForm() {
       </motion.p>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
-        {/* Name & email */}
+        {/* Name, email & phone */}
         {fields.map((f, i) => (
           <motion.label
             key={f.id}
@@ -144,7 +142,10 @@ export default function ContactForm() {
             custom={i + 2}
             className="text-sm text-zinc-300"
           >
-            <span>{f.label}</span>
+            <span>
+              {f.label}
+              {!f.required && <span className="text-zinc-500"> (optional)</span>}
+            </span>
             <input
               id={f.id}
               name={f.name}
@@ -161,7 +162,7 @@ export default function ContactForm() {
         {/* Project type */}
         <motion.label
           variants={inputVariant}
-          custom={4}
+          custom={5}
           className="text-sm text-zinc-300"
         >
           <span>What do you need?</span>
@@ -172,7 +173,7 @@ export default function ContactForm() {
             className={inputClasses}
           >
             <option>Portfolio website</option>
-            <option>Website application</option>
+            <option>Web application</option>
             <option>React application</option>
             <option>Full stack application</option>
             <option>Website redesign</option>
@@ -183,7 +184,7 @@ export default function ContactForm() {
         {/* Budget */}
         <motion.label
           variants={inputVariant}
-          custom={5}
+          custom={6}
           className="text-sm text-zinc-300"
         >
           <span>
@@ -194,22 +195,15 @@ export default function ContactForm() {
             name="budget"
             type="text"
             inputMode="numeric"
-            placeholder="e.g. ₹25,000 - ₹50,000"
+            placeholder="e.g. ₹25,000 — ₹50,000"
             className={inputClasses}
           />
-          {/*
-            <option value="">Prefer not to say</option>
-            <option>Under &#8377;25,000</option>
-            <option>&#8377;25,000–&#8377;50,000</option>
-            <option>&#8377;50,000+</option>
-            <option>Let&apos;s discuss</option>
-          */}
         </motion.label>
 
         {/* Timeline */}
         <motion.label
           variants={inputVariant}
-          custom={6}
+          custom={7}
           className="text-sm text-zinc-300"
         >
           <span>
@@ -232,7 +226,7 @@ export default function ContactForm() {
         {/* Message */}
         <motion.label
           variants={inputVariant}
-          custom={7}
+          custom={8}
           className="text-sm text-zinc-300 sm:col-span-2"
         >
           <span>Project details</span>
@@ -252,7 +246,7 @@ export default function ContactForm() {
       {/* Submit button */}
       <motion.button
         variants={inputVariant}
-        custom={8}
+        custom={9}
         type="submit"
         disabled={status === "sending"}
         className="accent-bg accent-button mt-5 inline-flex items-center gap-2 rounded-md px-5 py-3 font-semibold transition disabled:cursor-not-allowed disabled:opacity-60"
@@ -271,7 +265,7 @@ export default function ContactForm() {
 
       <motion.p
         variants={inputVariant}
-        custom={9}
+        custom={10}
         className="mt-3 text-xs text-zinc-500"
       >
         Your details are only used to reply to this inquiry.

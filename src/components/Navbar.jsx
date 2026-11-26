@@ -56,7 +56,7 @@ export default function Navbar() {
           </motion.a>
 
           {/* Desktop nav links */}
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-5 lg:flex">
             {links.map((l, i) => (
               <motion.a
                 key={l}
@@ -81,7 +81,7 @@ export default function Navbar() {
           <motion.a
             href="/images/Resume.pdf"
             download="Krishnaraj-R-Resume.pdf"
-            className="accent-bg accent-button hidden rounded-md px-4 py-2 text-sm font-semibold md:inline-flex"
+            className="accent-bg accent-button hidden rounded-md px-4 py-2 text-sm font-semibold lg:inline-flex"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -90,7 +90,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <motion.button
-            className="rounded-xl p-2 md:hidden"
+            className="rounded-xl p-2 lg:hidden"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
@@ -110,7 +110,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className="glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl p-3 md:hidden"
+              className="glass mx-auto mt-2 max-w-6xl overflow-hidden rounded-2xl p-3 lg:hidden"
             >
               {links.map((l, i) => (
                 <motion.a
