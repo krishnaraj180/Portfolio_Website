@@ -42,7 +42,7 @@ function useTypewriter(texts, speed = 80, pause = 2000) {
   return displayText;
 }
 
-/* ── Floating particles ─────────────────────────────── */
+/* ── Floating particles (deterministic — no hydration mismatch) ── */
 function Particles() {
   const particles = useMemo(
     () =>
@@ -199,6 +199,16 @@ export default function Hero() {
             >
               <Eye size={17} aria-hidden="true" />
               View resume
+            </motion.a>
+            <motion.a
+              href="/images/Resume.pdf"
+              download="Krishnaraj-R-Resume.pdf"
+              aria-label="Download resume as PDF"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-4 py-3 font-semibold transition hover:border-white/30 hover:bg-white/5"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download size={17} aria-hidden="true" />
             </motion.a>
           </motion.div>
 

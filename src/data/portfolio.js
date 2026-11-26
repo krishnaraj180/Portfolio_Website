@@ -1,5 +1,5 @@
 export const portfolio = {
-  name: "Krishnaraj ",
+  name: "Krishnaraj R.",
   role: "Full Stack Developer",
   email: "krishnarajr180@gmail.com",
   phone: "+91 81481 75312",
@@ -16,29 +16,18 @@ export const portfolio = {
   },
   summary:
     "I'm a B.Tech Information Technology graduate focused on full stack development with the MERN ecosystem. I enjoy turning ideas into responsive interfaces, building robust APIs, creating reusable React components and shipping practical web applications from frontend to backend.",
-  stats: [
-    ["8.00", "CGPA"],
-    ["7", "Featured projects"],
-    ["React", "Focus"],
-    ["2026", "Graduate"],
-  ],
   heroStats: [
     ["7+", "Projects built"],
     ["8.00", "CGPA"],
     ["2026", "IT Graduate"],
     ["MERN", "Stack"],
   ],
-  services: [
-    ["Responsive websites", "Mobile-first interfaces built to work smoothly across screen sizes."],
-    ["React interfaces", "Reusable components and thoughtful interactions for product experiences."],
-    ["API-connected apps", "Full stack experiences with REST APIs, databases and application state."],
-  ],
   experience: [
     {
       role: "Software Developer Intern",
       company: "Codework.ai",
       location: "Chennai, Tamil Nadu",
-      period: "July 2026 - Ongoing",
+      period: "July 2026 — Present",
       highlights: [
         "Built responsive web interfaces using React.js, Next.js, TypeScript and Tailwind CSS.",
         "Managed application state with Redux Toolkit and Zustand while developing RESTful APIs with Node.js and Express.js.",
@@ -47,8 +36,8 @@ export const portfolio = {
     },
   ],
   certifications: [
-    ["Modern React with Redux", "Udemy", "May - Jun 2026"],
-    ["JavaScript Essentials", "Cisco Networking Academy", "Mar - Apr 2025"],
+    ["Modern React with Redux", "Udemy", "May — Jun 2026"],
+    ["JavaScript Essentials", "Cisco Networking Academy", "Mar — Apr 2025"],
   ],
   workflow: [
     ["01", "Understand", "Clarify the audience, goals and must-have features."],
